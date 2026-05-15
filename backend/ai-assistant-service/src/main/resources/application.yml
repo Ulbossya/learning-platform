@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: ai-assistant-service
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:learning_platform}
+    username: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:postgres}
+
+openai:
+  api:
+    url: ${OPENAI_API_URL:https://api.openai.com/v1/chat/completions}
+  model: ${OPENAI_MODEL:gpt-4o}
+
+server:
+  port: ${SERVER_PORT:8086}
+
+logging:
+  level:
+    root: INFO
+    com.edtech: DEBUG
